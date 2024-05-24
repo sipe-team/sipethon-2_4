@@ -2,6 +2,7 @@ import { TQaItem } from '@/store/qa/qa';
 import { RefObject, useRef, useState } from 'react';
 import Bg3 from '../../assets/images/bg1.jpg';
 import { Button } from '../ui/button';
+import Header from '../Header/Header';
 import useQaItemController from './QaItem.controller';
 import './QaItem.css';
 
@@ -27,7 +28,8 @@ const QaItem = (props: IProps) => {
   return (
     <div className="h-svh" style={{ background: `url(${Bg3})` }}>
       <div className="bg-black opacity-50 h-svh" />
-      <div className="absolute left-0 flex content-center justify-center w-full p-10 text-2xl font-bold text-center text-white top-64">
+      <Header>{question}</Header>
+      <div className="absolute left-0 flex content-center justify-center text-2xl font-bold text-center text-white top-64 w-full p-10">
         {question}
       </div>
       <div className="absolute left-0 w-full px-5 bottom-12">
