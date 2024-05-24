@@ -6,6 +6,7 @@ const useQaItemController = () => {
   const nextQa = () => {
     setCurrentOrder((prev) => prev + 1);
   };
+
   return { nextQa };
 };
 
