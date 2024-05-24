@@ -1,8 +1,6 @@
 import { TQaItem } from '@/store/qa/qa';
 import { RefObject, useRef, useState } from 'react';
-import Bg3 from '../../assets/images/bg1.jpg';
 import { Button } from '../ui/button';
-import Header from '../Header/Header';
 import useQaItemController from './QaItem.controller';
 import './QaItem.css';
 
@@ -25,11 +23,15 @@ const QaItem = (props: IProps) => {
     setCurrentAudio(musicRef.current);
   };
 
+  const getImage = () => {
+    const random = Math.floor(Math.random() * 15);
+    return `public/images/bg${random === 0 ? 1 : random}.jpg`;
+  };
+
   return (
-    <div className="h-svh" style={{ background: `url(${Bg3})` }}>
+    <div className="h-svh" style={{ background: `url(${getImage()})` }}>
       <div className="bg-black opacity-50 h-svh" />
-      <Header>{question}</Header>
-      <div className="absolute left-0 flex content-center justify-center text-2xl font-bold text-center text-white top-64 w-full p-10">
+      <div className="absolute left-0 flex content-center justify-center w-full p-10 text-2xl font-bold text-center text-white top-64">
         {question}
       </div>
       <div className="absolute left-0 w-full px-5 bottom-12">
@@ -56,7 +58,6 @@ const QaItem = (props: IProps) => {
           className="px-5 py-5 text-0.5xl bg-zinc-900/70 rounded-lg hover:bg-zinc-900 mb-10"
           onClick={() => qaItem.nextQa(answer2.code)}
         >
-          {' '}
           {isMusic ? (
             <audio
               ref={musicRef2}
