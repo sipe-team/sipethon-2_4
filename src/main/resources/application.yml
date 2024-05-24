@@ -1,0 +1,37 @@
+#spring.application.name=guitar4u
+server:
+  port: 8080
+  servlet:
+    contextPath: /
+logging:
+  level:
+    org:
+      springframework:
+        security=DEBUG:
+spring:
+  application:
+    name: guitar4u
+  profiles:
+    default: default
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://43.203.246.241:3306/guitar4u
+    username: root
+    password: 1234
+  jpa:
+    database: mysql
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      use_sql_comments: true
+      hibernate:
+        default_batch_fetch_size: 1000
+        show_sql: false
+        format_sql: false
+
+  jackson:
+    serialization:
+      indent_output: true
+
