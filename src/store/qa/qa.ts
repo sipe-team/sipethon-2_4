@@ -5,6 +5,11 @@ const currentOrder_Atom = atom<number>({
   default: -1,
 });
 
+const result_Atom = atom<string[]>({
+  key: 'result_Atom',
+  default: [],
+});
+
 export type TQaItem = {
   type: 'QUESTION' | 'MUSIC';
   question: string;
@@ -23,4 +28,4 @@ const qaItems_Atom = atom<TQaItem[]>({
   default: [],
 });
 
-export { currentOrder_Atom as currentOrder, qaItems_Atom as qaItems };
+export { currentOrder_Atom as currentOrder, qaItems_Atom as qaItems, result_Atom as result };
