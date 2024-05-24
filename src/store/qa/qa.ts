@@ -10,6 +10,15 @@ const result_Atom = atom<string[]>({
   default: [],
 });
 
+const totalResult_Atom = atom<{
+  code: 'A' | 'B' | 'C';
+  id: number;
+  summary: string;
+}>({
+  key: 'totalResult_Atom',
+  default: undefined,
+});
+
 export type TQaItem = {
   type: 'QUESTION' | 'MUSIC';
   question: string;
@@ -28,4 +37,9 @@ const qaItems_Atom = atom<TQaItem[]>({
   default: [],
 });
 
-export { currentOrder_Atom as currentOrder, qaItems_Atom as qaItems, result_Atom as result };
+export {
+  currentOrder_Atom as currentOrder,
+  qaItems_Atom as qaItems,
+  result_Atom as result,
+  totalResult_Atom as totalResult,
+};
