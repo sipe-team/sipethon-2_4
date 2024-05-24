@@ -27,9 +27,16 @@ const QaItem = (props: IProps) => {
   return (
     <div className="h-svh" style={{ background: `url(${Bg3})` }}>
       <div className="bg-black opacity-50 h-svh" />
-      {question}
-      <div className="">
-        <Button className="answer-card" size="full" onClick={qaItem.nextQa}>
+      <div className="absolute left-0 flex content-center justify-center text-2xl font-bold text-center text-white top-64 w-full p-10">
+        {question}
+      </div>
+      <div className="absolute left-0 w-full px-5 bottom-12">
+        <Button
+          variant="primary"
+          size="full"
+          className="px-5 py-5 text-0.5xl bg-zinc-900/70 rounded-lg hover:bg-zinc-900 mb-10"
+          onClick={qaItem.nextQa}
+        >
           {isMusic ? (
             <audio
               ref={musicRef1}
@@ -41,7 +48,13 @@ const QaItem = (props: IProps) => {
             answer1.answer
           )}
         </Button>
-        <Button className="answer-card" size="full" onClick={qaItem.nextQa}>
+        <Button
+          variant="primary"
+          size="full"
+          className="px-5 py-5 text-0.5xl bg-zinc-900/70 rounded-lg hover:bg-zinc-900 mb-10"
+          onClick={qaItem.nextQa}
+        >
+          {' '}
           {isMusic ? (
             <audio
               ref={musicRef2}

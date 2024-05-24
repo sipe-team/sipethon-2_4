@@ -17,6 +17,8 @@ const buttonVariants = cva(
         link: 'text-primary underline-offset-4 hover:underline',
         primary:
           'bg-primary h-50 text-white py-2 px-4 rounded-md hover:bg-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50',
+        answer_card:
+          "text-primary-foreground bg-primary 'font-family: 'Courier New', Courier, monospace font-size: 14px text-wrap: pretty height: 100px margin-top: 10px   margin-bottom: 10px   transition: background-color 0.3s ease cursor: pointer background-color: rgba(24, 24, 24, 0.7) hover:rgba(24, 24, 24, 1.0)",
       },
       size: {
         default: 'h-10 px-4 py-2',
